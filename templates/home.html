@@ -17,18 +17,27 @@
     </div>
     <div class="container">
         <div class="row text-center">
-            <form action="/rand">
+            <form id="random-form" action="/rand">
                 {#                <input type="submit" value="RANDOM ITEM">#}
-                <button type="submit" class="btn btn-danger btn-lg"
-                        style="text-align: center;background: #F44336; box-shadow: whitesmoke; padding-top: 10%; padding-bottom: 10%; width:75%;    font-size: xx-large;">
+                <button id="random-button" type="submit" class="btn btn-danger btn-lg"
+                        style="text-align: center;background: #F44336; box-shadow: whitesmoke; padding-top: 10%; padding-bottom: 10%; width:75%;    font-size: xx-large;"
+                        onclick="setTimeout(disableBtn(), 1);">
                     CLICK ME!<br/>
                     AND... <br/>
-                    <img src="https://s-media-cache-ak0.pinimg.com/originals/75/b7/96/75b7968428fa0af32dc7ec9e06f4dafa.gif" style="width: 100%;">
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/75/b7/96/75b7968428fa0af32dc7ec9e06f4dafa.gif"
+                         style="width: 100%;">
                 </button>
             </form>
         </div>
     </div>
 </div>
+
+<script type="application/javascript">
+    function disableBtn() {
+        document.getElementById('random-button').disabled = 'true';
+        document.getElementById("random-form").submit();
+    }
+</script>
 
 </body>
 </html>
